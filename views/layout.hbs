@@ -12,7 +12,21 @@
   <body>
 
     <nav>
+
+      {{#if userIsActive}}
+        <a href="/main">Main</a>
+         <a href="/private">Private</a>
+        <form action="auth/logout" method="POST">
+          <button>Cerrar Sesion</button>
+        </form>
+
+      {{else}}
       <a href="/auth/signup">Registrarse</a>
+      <hr width="70px" align="left">
+      <a href="/auth/login">Acceder</a>
+
+      {{/if}}
+      
     </nav>
 
     {{{body}}}
